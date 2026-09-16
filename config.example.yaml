@@ -1,0 +1,38 @@
+# ==============================================================================
+# Kahoot AI Agent Configuration
+# ==============================================================================
+
+app:
+  debug: false
+  log_level: "INFO"
+
+browser:
+  # Chrome remote debugging address
+  cdp_url: "http://localhost:9222"
+  # Target URL keyword to match the Kahoot player tab
+  target_url_keyword: "kahoot.it"
+  # Maximum wait time for tab discovery in seconds
+  tab_timeout_sec: 30
+
+ai:
+  # Provider: "gemini" or "openai"
+  provider: "gemini"
+  # Recommended: gemini-2.5-flash or gemini-1.5-flash for lowest latency
+  model_name: "gemini-2.5-flash"
+  temperature: 0.1
+  timeout_sec: 4.0
+
+gameplay:
+  # Answer strategy: "auto" (auto-click immediately) or "assist" (display suggested answer only)
+  mode: "auto"
+  # Delay before clicking in seconds (prevents detection / simulates human reaction)
+  # Set to 0.0 for pure maximum points
+  answer_delay_sec: 0.4
+  # Auto proceed to next question when result is displayed
+  auto_proceed: true
+
+vision:
+  # Region of Interest for host screen [top, left, width, height] (leave null for fullscreen)
+  roi: null
+  # Screen capture interval in seconds
+  poll_interval_sec: 0.5

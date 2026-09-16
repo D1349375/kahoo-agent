@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kahoo-agent"
+version = "0.1.0"
+description = "High-performance AI Kahoot assistant with CDP browser automation and vision multimodal solver"
+readme = "README.md"
+authors = [{ name = "Yang", email = "D1349375@o365.fcu.edu.tw" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "playwright>=1.40.0",
+    "google-generativeai>=0.8.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "pyyaml>=6.0.1",
+    "rich>=13.7.0",
+    "click>=8.1.7",
+    "mss>=9.0.1",
+    "Pillow>=10.2.0",
+    "pyautogui>=0.9.54",
+]
+
+[project.scripts]
+kahoo-agent = "main:cli"
+
+[tool.setuptools.packages.find]
+include = ["kahoo_agent*"]
